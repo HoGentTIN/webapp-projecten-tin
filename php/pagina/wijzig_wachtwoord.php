@@ -38,7 +38,7 @@ include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php
     }
 
     $_GET['pagina_titel'] = 'Wijzig wachtwoord';
-    include '/srv/prjtinapp' . . '/php/pagina/gedeeld/header.php';
+    include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Huidige wachtwoord",  "password"); ?>
     <?php echo maak_invoerveld_label_links("Nieuwe wachtwoord", "password"); ?>
@@ -49,4 +49,4 @@ include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php
     <br/>
     <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>

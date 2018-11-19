@@ -151,4 +151,4 @@ $nieuwe_rij = [
     <br><br>
     <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>

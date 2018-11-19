@@ -93,4 +93,4 @@ else {
     echo maak_submit_knop("Indienen", "thumbsup", "opslaan", false, true, "warning");
 }
 
-include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php';
+include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php';

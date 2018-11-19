@@ -22,7 +22,7 @@
     }
 
     $_GET['pagina_titel'] = 'Aanmelden';
-    include '/srv/prjtinapp' . . '/php/pagina/gedeeld/header.php';
+    include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Gebruikersnaam"); ?>
     <?php echo maak_invoerveld_label_links("Wachtwoord", "password"); ?>
@@ -32,4 +32,4 @@
     <br/>
     <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="/reset_wachtwoord.php">hier</a>!</label>
 <!-- footer includen -->
-<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>

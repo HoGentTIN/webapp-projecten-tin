@@ -20,7 +20,7 @@ if(isset($_POST['reset']))
 }
 
 $_GET['pagina_titel'] = 'Wachtwoord resetten';
-include '/srv/prjtinapp' . . '/php/pagina/gedeeld/header.php';
+include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Gebruikersnaam"); ?>
     <div class="clearfix"></div><hr />
@@ -28,4 +28,4 @@ include '/srv/prjtinapp' . . '/php/pagina/gedeeld/header.php';
     <br />
     <?php echo maak_dashboard_knop("aanmelden"); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
