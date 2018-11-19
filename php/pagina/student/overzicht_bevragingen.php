@@ -154,4 +154,4 @@ echo maak_tabel($filters, $headers, $data_ids, $data, "bevragingen", $huidige_pa
     <br><br>
 <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>

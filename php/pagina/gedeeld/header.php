@@ -24,7 +24,7 @@
 <?php
 // navigatie tonen indien aangemeld
 if ($sessie_controller->is_aangemeld()) {
-    include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/navigatie.php';
+    include '/srv/prjtinapp' . . '/php/pagina/gedeeld/navigatie.php';
 }
 ?>
 <!-- eigenlijke inhoud pagina starten -->

@@ -3,7 +3,7 @@
     $profiel = $gebruiker->geef_voornaam() . " " . $gebruiker->geef_familienaam() . " (" . $gebruiker->geef_gebruikertype() . ")";
     // kijken of we een profielfoto vinden of niet
     $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruiker->geef_gebruikertype() . '/' . $gebruiker->geef_gebruikersnaam() . '.jpg');
-    if(file_exists($_SERVER['DOCUMENT_ROOT']. $profiel_foto)){
+    if(file_exists('/srv/prjtinapp' .. $profiel_foto)){
         $profiel_foto = '<img class="profiel-foto" src="' . $profiel_foto . '" />';
     }
     // bestat niet, dus generiek manneke tonen

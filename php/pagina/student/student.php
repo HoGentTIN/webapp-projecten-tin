@@ -27,4 +27,4 @@ $aantal_ingevulde_bevragingen = $student_controller->geef_aantal_ingevulde_bevra
 ?>
 <div>
 <!-- footer includen -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>

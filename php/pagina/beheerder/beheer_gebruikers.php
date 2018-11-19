@@ -182,4 +182,4 @@ echo maak_tabel($filters, $headers, $data_ids, $data, "gebruikers", $huidige_pag
     <br><br>
 <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>

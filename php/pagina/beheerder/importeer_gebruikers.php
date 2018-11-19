@@ -154,4 +154,4 @@ include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
             &nbsp;&nbsp;
             <?php echo maak_submit_knop("Importeren", "arrow-swap", "importeren", false, true, "warning"); ?>
 <!-- footer includen -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>

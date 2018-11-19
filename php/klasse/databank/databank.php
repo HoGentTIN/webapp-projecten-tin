@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER["DOCUMENT_ROOT"] . '/php/klasse/databank/enum/sql_query_type.php';
+include_once '/srv/prjtinapp' . . '/php/klasse/databank/enum/sql_query_type.php';
 
 /**
  * Class DATABANK
@@ -65,7 +65,7 @@ class DATABANK
      */
     private function maak_verbinding() {
         // Constante waarden voor de databank
-        $databank_config = parse_ini_file( $_SERVER["DOCUMENT_ROOT"] . '/php/configuratie/.databank.ini');
+        $databank_config = parse_ini_file( '/srv/prjtinapp' . . '/php/configuratie/.databank.ini');
         $HOST = $databank_config['HOST'];
         $POORT = $databank_config['POORT'];
         $DATABANK = $databank_config['DATABANK'];

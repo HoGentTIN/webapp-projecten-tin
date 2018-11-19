@@ -4,9 +4,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/Exception.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/PHPMailer.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/SMTP.php';
+require '/srv/prjtinapp' . . '/vendor/phpmailer/phpmailer/Exception.php';
+require '/srv/prjtinapp' . . '/vendor/phpmailer/phpmailer/PHPMailer.php';
+require '/srv/prjtinapp' . . '/vendor/phpmailer/phpmailer/SMTP.php';
 
 /**
  * Class Mailer
@@ -21,7 +21,7 @@ class Mailer {
      * Mailer constructor.
      */
     public function __construct() {
-        $databank_config = parse_ini_file( $_SERVER["DOCUMENT_ROOT"] . '/php/configuratie/.email.ini');
+        $databank_config = parse_ini_file( '/srv/prjtinapp' . . '/php/configuratie/.email.ini');
         $HOST = $databank_config['HOST'];
         $POORT = $databank_config['POORT'];
         $GEBRUIKERSNAAM = $databank_config['GEBRUIKERSNAAM'];

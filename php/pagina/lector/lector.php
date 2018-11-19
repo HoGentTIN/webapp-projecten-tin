@@ -26,4 +26,4 @@ echo '<div class="row">';
 echo '</div>';
     ?>
 <!-- footer includen -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php'; ?>

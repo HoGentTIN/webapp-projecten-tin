@@ -76,4 +76,4 @@ else {
     echo maak_submit_knop("Opslaan als pdf", "archive", "download", false, false, "warning");
 }
 
-include $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/footer.php';
+include '/srv/prjtinapp' . . '/php/pagina/gedeeld/footer.php';
