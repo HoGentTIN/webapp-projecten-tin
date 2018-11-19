@@ -1,0 +1,436 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    padding-bottom: 40px;
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin-top:100px; /* 35px meer dan hoogte in .profiel_foto */
+}
+
+.container-inhoud {
+    margin-top:15px; /* voor container binnen de container */
+}
+
+h2, h3, h4 {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #006fb8; /* Hogent kleur */
+}
+
+hr {
+    border: 1px solid #006fb8;
+}
+
+.form-container {
+    background:#fff;
+    padding: 20px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+    border-radius:3px;
+}
+
+button {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size: 25px;
+}
+
+button:focus {
+    text-decoration: none !important;
+}
+
+button:hover {
+    text-decoration: none !important;
+}
+
+div button {
+    text-decoration: none;
+}
+
+.btn-link:focus {
+    text-decoration: none !important;
+}
+
+.btn-link:hover {
+    text-decoration: none !important;
+}
+
+label {
+    font-family:Tahoma, Geneva, sans-serif;
+    /*color:#00a9d1;*/
+}
+
+a {
+    text-decoration:underline;
+}
+
+a, a:active, a:focus {
+    outline: none;
+}
+
+/* Overschrijven/toevoegen waarden bootstrap elementen */
+.nav-link {
+    text-decoration: none;
+    color:#fff;
+}
+
+/* Overschrijven/toevoegen waarden bootstrap elementen */
+.dropdown-item {
+    text-decoration: none;
+    color:#006fb8;
+}
+
+/* Overschrijven/toevoegen waarden bootstrap elementen */
+.dropdown-item:hover {
+    text-decoration: none;
+    color:#000000;
+    background-color: #FFFFFF;
+}
+
+/* Overschrijven/toevoegen waarden bootstrap elementen */
+.dropdown-menu {
+    border: 3px solid #006fb8;  /* bootstrap kleur: primary */
+    margin: -0.05rem 0 0 0;
+    color:#006fb8;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.navigatiebalk {
+    padding-bottom: 2px;
+    padding-top: 0px;
+    padding-left: 50px;
+    outline: none;
+    font-weight: bold;
+    font-size: larger;
+    color: #ffffff;
+    background-color:#006fb8 !important; /* boostrap overschrijven */
+}
+
+/* Profielfoto altijd 65 px */
+.profiel-foto {
+    max-height: 65px;
+    min-height: 65px;
+    height: 65px;
+    background-color:#006fb8 !important; /* boostrap overschrijven */
+}
+
+/* Logo altijd 40 px */
+.logo {
+    max-height: 40px;
+    min-height: 40px;
+    height: 40px;
+    background-color:#006fb8 !important; /* boostrap overschrijven */
+}
+
+
+/* Generieke profielfoto groot tonen */
+.generiek_profiel {
+    font-size: 7rem;
+}
+
+.btn-primary {
+    background-color:#006fb8 !important; /* boostrap overschrijven */
+}
+
+.vraagtitel {
+    font-weight: bolder;
+}
+
+.tekstrechts {
+    text-align: right;
+}
+
+.tekstlinks {
+    text-align: left;
+}
+
+.tekstmidden {
+    text-align: center;
+}
+
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+}
+
+.btn-nietactief {
+    background-color: #78b7ed;
+    border-color: #78b7ed;
+}
+
+/* Overschrijven/toevoegen waarden bootstrap elementen */
+.table .thead-dark th{
+    color:#fff;
+    background-color:#006fb8;
+    border-color:#005bff;
+}
+
+/* borders weghalen voor filterrij */
+.table thead th {
+    border: none;
+}
+
+tbody tr:focus{
+    background-color:#88c7ed;
+}
+
+.table td {
+    border-top: 1px solid #006fb8;
+}
+
+.bladeren_rij {
+    text-align: right;
+}
+
+.bladeren_rij:hover  {
+    background-color: #FFFFFF !important;
+}
+
+.bladeren_rij:focus {
+    background-color: #FFFFFF !important;
+}
+
+.bladeren_rij td {
+    border-top: 2px solid #006fb8;
+}
+
+/* Dashboard kaartjes */
+.huge {
+    font-size: 40px;
+}
+
+/* Groene kaarten */
+.kaart-lichtgroen {
+     border-color: #5cb85c;
+ }
+.kaart-lichtgroen > .card-header {
+    border-color: #5cb85c;
+    color: white;
+    background-color: #5cb85c;
+}
+.kaart-lichtgroen > a {
+    color: #5cb85c;
+}
+.kaart-lichtgroen > a:hover {
+    color: #3d8b3d;
+}
+
+.kaart-groen {
+    border-color: #406a28; /* Light Brunswick green */
+}
+.kaart-groen > .card-header {
+    border-color: #406a28;
+    color: white;
+    background-color: #406a28;
+}
+.kaart-groen > a {
+    color: #406a28;
+}
+.kaart-groen > a:hover {
+    color: #3d8b3d;
+}
+/* rode kaart */
+.kaart-rood {
+    border-color: #B22222; /* Fire brick */
+}
+.kaart-rood > .card-header {
+    border-color: #B22222;
+    color: white;
+    background-color: #B22222;
+}
+.kaart-rood > a {
+    color: #B22222;
+}
+.kaart-rood > a:hover {
+    color: #b52b27;
+}
+/* Oranje bruin */
+
+
+/* Orange brown */
+.kaart-bruin {
+    border-color: #753b1e;
+}
+.kaart-bruin > .card-header {
+    border-color: #753b1e;
+    color: white;
+    background-color: #753b1e;
+}
+.kaart-bruin > a {
+    color: #753b1e;
+}
+.kaart-bruin > a:hover {
+    color: #700b0e;
+}
+
+/* oranje kaart */
+.kaart-oranje {
+    border-color: #FFA500;
+}
+.kaart-oranje > .card-header {
+    border-color: #FFA500;
+    color: white;
+    background-color: #FFA500;
+}
+.kaart-oranje > a {
+    color: #FFA500;
+}
+.kaart-oranje > a:hover {
+    color: #FF8C00; /* dark orange */
+}
+
+/* blauwe kaarten */
+.kaart-blauw {
+    border-color: #006fb8;
+}
+.kaart-blauw > .card-header {
+    border-color: #006fb8;
+    color: white;
+    background-color: #006fb8;
+}
+.kaart-blauw > a {
+    color: #0E86DD;
+}
+.kaart-blauw > a:hover {
+    color: #0E86DD;
+}
+
+/* groenblauw kaart */
+.kaart-groenblauw {
+    border-color: #008080;
+}
+.kaart-groenblauw > .card-header {
+    border-color: #008080;
+    color: white;
+    background-color: #008080;
+}
+.kaart-groenblauw > a {
+    color: #008080;
+}
+.kaart-groenblauw > a:hover {
+    color: #004444;
+}
+
+/* lichtblauw */
+.kaart-lichtblauw {
+    border-color: #BACFEF;
+}
+.kaart-lichtblauw > .card-header {
+    border-color: #BACFEF;
+    color: white;
+    background-color: #BACFEF;
+}
+.kaart-lichtblauw > a {
+    color: #BACFEF;
+}
+.kaart-lichtblauw > a:hover {
+    color: #0E86DD;
+}
+
+/* grijze kaarten */
+/* antraciet achtig */
+.kaart-antraciet {
+    border-color: #3f3f3f;
+}
+.kaart-antraciet > .card-header {
+    border-color: #3f3f3f;
+    color: white;
+    background-color: #3f3f3f;
+}
+.kaart-antraciet > a {
+    color: #3f3f3f;
+}
+.kaart-antraciet > a:hover {
+    color: #293133;
+}
+
+.kaart-grijs {
+    border-color: #6f7264;      /* slate*/
+}
+.kaart-grijs > .card-header {
+    border-color: #6f7264;
+    color: white;
+    background-color: #6f7264;
+}
+.kaart-grijs > a {
+    color: #6f7264;
+}
+.kaart-grijs > a:hover {
+    color: #4f5744;
+}
+
+/* hemelsblauw */
+.kaart-hemelsblauw {
+    border-color: #22BFFF;
+}
+.kaart-hemelsblauw > .card-header {
+    border-color: #00BFFF;
+    color: white;
+    background-color: #00BFFF;
+}
+.kaart-hemelsblauw > a {
+    color: #00BFFF;
+}
+.kaart-hemelsblauw > a:hover {
+    color: #0E86DD;
+}
+
+/* Groene kaarten */
+.kaart-rubrics {
+    border-color: #337ab7;
+}
+.kaart-rubrics  > .card-header {
+    border-color: #337ab7;
+    color: #337ab7;
+    background-color: #ffffff;
+}
+.kaart-rubrics > a {
+    color: #337ab7;
+}
+.kaart-rubrics > a:hover {
+    color: #307ab7;
+}
+
+.kaart-rubrics-stop {
+    background-color: #B22222;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.kaart-rubrics-waarschuwing {
+    background-color: #FF8C00;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.kaart-rubrics-ok {
+    background-color: #3d8b3d;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.kaart-rubrics-nvt {
+    background-color: #E6E6FA;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.kaart-rubrics-group {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4 */
+.toggle-off {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.toggle.off {
+    border-color: rgba(0, 0, 0, .25);
+}
+
+.toggle-handle {
+    background-color: white;
+    border: thin rgba(0, 0, 0, .25) solid;
+}

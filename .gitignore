@@ -1,0 +1,9 @@
+# Phpstorm project files
+.idea/
+
+# Configuratiebestanden
+php/configuratie/.*.ini
+
+# Dependencies
+vendor/
+composer.lock
