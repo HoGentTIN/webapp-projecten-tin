@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/antwoord_groep.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/antwoord_groep.php';
 
 /**
  * Class AntwoordGroepMapper

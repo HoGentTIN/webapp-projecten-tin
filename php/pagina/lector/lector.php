@@ -2,12 +2,12 @@
 /**
  * Dashboard pagina voor de lector
  */
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
 // Kijken of we beheerder zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("LECTOR"));
 
 // aantal openstaande & ingevulde bevragingen opvragen
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/lector_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/lector_controller.php';
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $lector_controller = new LectorController($gebruikersnaam);
 $aantal_bevragingen = $lector_controller->geef_aantal_bevragingen("%");
@@ -16,8 +16,8 @@ $succes = DATABANK::geef_instantie()->geef_sql_query();
 
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Lector dashboard';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/html.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
 ?>
 <!-- Eignelijke inhoud pagina -->
 <?php

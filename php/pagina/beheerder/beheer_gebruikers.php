@@ -3,13 +3,13 @@
  * Beheer pagina voor periodes voor de beheerder
  */
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/sessie.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/tabel.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/tabel.php';
 // Kijken of we beheerder zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("BEHEERDER"));
 
 // BeheerderController aanmaken voor huidige beheerder
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/beheerder_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/beheerder_controller.php';
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $beheerder_controller = new BeheerderController($gebruikersnaam);
 
@@ -79,11 +79,11 @@ foreach($gebruikers as $gebruiker){
 // aantal elementen voor volledige tabel
 $totaal_aantal_elementen = count($gebruikers);
 // generieke code uitvoeren voor pagina met tabel die bladerbaar is
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/bladeren.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bladeren.php';
 
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Beheer gebruikers';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/header.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
 
 /**
  * @param OpleidingsOnderdeel[] $olods

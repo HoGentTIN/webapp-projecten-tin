@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/sessie.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php';
 
     // Als gebruiker niet aangemeld is naar zijn startpagina sturen
     if(!$sessie_controller->is_aangemeld()) {

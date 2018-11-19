@@ -1,5 +1,5 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/html.php';
+    include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
 
     // Kijken of er een sessiecontroller is voor deze pagina
     if(!isset($sessie_controller)) { $sessie_controller = new SessieController(); }

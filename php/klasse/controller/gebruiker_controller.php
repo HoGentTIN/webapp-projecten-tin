@@ -1,8 +1,8 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/controller.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/gebruiker_mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/bevraging_mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/enum/gebruiker_type.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/gebruiker_mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/bevraging_mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/enum/gebruiker_type.php';
 
 /**
  * Class GebruikerController
@@ -130,7 +130,7 @@ class GebruikerController extends Controller
      */
     public function download_bevraging_pdf(Bevraging $bevraging, string $htmlbevraging){
         // include voor pdf te kunnen genereren
-        include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/pdf.php';
+        include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/pdf.php';
         // TODO: groep linken voor overzicht sus score
         $html_code = '<H2>Bevraging SUS score</H2>';
         if($bevraging->met_score()) {

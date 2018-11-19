@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/vraag.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/vraag.php';
 
 /**
  * Class VraagMapper

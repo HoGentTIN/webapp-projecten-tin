@@ -1,9 +1,9 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/olod_mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/enum/gebruiker_type.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/gebruiker.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/mailer.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/olod_mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/enum/gebruiker_type.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/gebruiker.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/mailer.php';
 
 class GebruikerMapper extends Mapper
 {

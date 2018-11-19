@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/databank.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/databank.php';
 
 /**
  * Class Mapper

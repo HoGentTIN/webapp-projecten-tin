@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/sessie_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/sessie_controller.php';
 
 $sessie_controller = new SessieController();
 

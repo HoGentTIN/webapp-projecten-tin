@@ -1,7 +1,7 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/opleiding.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/opleidings_onderdeel.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/opleiding.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/opleidings_onderdeel.php';
 
 
 class OlodMapper extends Mapper

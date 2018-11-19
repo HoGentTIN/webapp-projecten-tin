@@ -1,10 +1,10 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
 // Kijken of we student zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("LECTOR"));
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/lector_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/lector_controller.php';
 
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $lector_controller = new LectorController($gebruikersnaam);
@@ -33,9 +33,9 @@ if($bevraging !== null && $bevraging->geef_voltooid_op() === null){
 
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Raadplegen bevraging (Doelgroep: ' . $doelgroep . ')';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/html.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/pagina/gedeeld/bevraging.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
+include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bevraging.php';
 
 // Kijken of we de bevragingwillen downloaden als pdf
 if(isset($_POST['download'])) {

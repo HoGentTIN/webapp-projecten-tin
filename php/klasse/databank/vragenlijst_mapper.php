@@ -1,8 +1,8 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/vraag_mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/databank/antwoordgroep_mapper.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/domein/vragenlijst.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/vraag_mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/databank/antwoordgroep_mapper.php';
+include_once '/srv/prjtinapp' . '/php/klasse/domein/vragenlijst.php';
 
 /**
  * Class VragenlijstMapper

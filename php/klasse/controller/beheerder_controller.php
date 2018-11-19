@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/php/klasse/controller/periode_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php';
+include_once '/srv/prjtinapp' . '/php/klasse/controller/periode_controller.php';
 
 class BeheerderController extends GebruikerController
 {
