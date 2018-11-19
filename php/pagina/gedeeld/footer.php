@@ -2,9 +2,9 @@
                 </div>
             </div>
         </div>
-        <script src="/vendor/jquery/js/jquery.min.js"></script>
-        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/vendor/bootstrap/js/bootstrap-toggle.min.js"></script>
+        <script src="/prjtin/vendor/components/jquery/jquery.js"></script>
+        <script src="/prjtin/vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="/prjtin/js/bootstrap-toggle.min.js"></script>
         <!-- gedeelde javascript code -->
         <script type="application/javascript">
             // wijzig de filters van de tabel => reload
