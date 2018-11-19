@@ -4,9 +4,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/srv/prjtinapp' . '/vendor/phpmailer/phpmailer/Exception.php';
-require '/srv/prjtinapp' . '/vendor/phpmailer/phpmailer/PHPMailer.php';
-require '/srv/prjtinapp' . '/vendor/phpmailer/phpmailer/SMTP.php';
+require '/srv/prjtinapp/vendor/phpmailer/src/phpmailer/Exception.php';
+require '/srv/prjtinapp/vendor/phpmailer/src/phpmailer/PHPMailer.php';
+require '/srv/prjtinapp/vendor/phpmailer/src/phpmailer/SMTP.php';
 
 /**
  * Class Mailer
