@@ -1,0 +1,11 @@
+{
+  "require": {
+    "twitter/bootstrap": "4.1.0",
+    "driftyco/ionicons": "2.0.1",
+    "components/jquery": "3.3.1",
+    "mpdf/mpdf": "7.0.*",
+    "phpmailer/phpmailer": "6.0.5",
+    "psr/log": "1.0.2"
+  }
+}
+
