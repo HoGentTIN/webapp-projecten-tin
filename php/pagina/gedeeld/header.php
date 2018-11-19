@@ -14,9 +14,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/prjtin/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="/prjtin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/prjtin/vendor/bootstrap/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="/prjtin/vendor/driftyco/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/prjtin/vendor/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/prjtin/vendor/twitter/bootstrap/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="/prjtin/css/style.css" rel="stylesheet">
     <title> <?php echo $_GET['pagina_titel'] ?> </title>
 </head>
