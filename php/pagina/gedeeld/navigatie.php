@@ -33,14 +33,14 @@
                     <?php echo $profiel ?> &nbsp;
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/php/pagina/wijzig_wachtwoord.php">
+                    <a class="dropdown-item" href="/prjtin/php/pagina/wijzig_wachtwoord.php">
                         <span class="ion-key"></span>&nbsp;&nbsp;Wijzig wachtwoord
                     </a>
                     <a class="dropdown-item" href="mailto:sebastiaan.labijn@hogent.be?subject=[Projecten2sus] Probleem/Bug">
                         <span class="ion-clipboard"></span>&nbsp;&nbsp;Meld een probleem
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/php/pagina/afmelden.php">
+                    <a class="dropdown-item" href="/prjtin/php/pagina/afmelden.php">
                         <span class="ion-power"></span>&nbsp;&nbsp;Afmelden
                     </a>
                 </div>

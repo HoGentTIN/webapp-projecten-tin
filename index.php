@@ -30,6 +30,6 @@
     <hr/>
     <?php echo maak_submit_knop("Aanmelden", "log-in", "aanmelden"); ?>
     <br/>
-    <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="/reset_wachtwoord.php">hier</a>!</label>
+    <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="/prjtin/reset_wachtwoord.php">hier</a>!</label>
 <!-- footer includen -->
 <?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
