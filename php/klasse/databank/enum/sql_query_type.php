@@ -1,5 +1,5 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/gedeeld/enum.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/gedeeld/enum.php';
 
 class SQL_QUERY_TYPE extends Enum {
     protected static $caseSensitive = true;

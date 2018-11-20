@@ -1,5 +1,5 @@
 <?php
-    include_once '/srv/prjtinapp' . '/php/klasse/controller/sessie_controller.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/sessie_controller.php';
     // Gebruiker afmelden
     $sc = new SessieController();
     $sc->meld_af();

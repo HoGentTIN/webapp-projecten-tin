@@ -1,6 +1,6 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
-include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
 
     // Als gebruiker niet aangemeld is naar zijn startpagina sturen
     if(!$sessie_controller->is_aangemeld()) {
@@ -38,7 +38,7 @@ include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php
     }
 
     $_GET['pagina_titel'] = 'Wijzig wachtwoord';
-    include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+    include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Huidige wachtwoord",  "password"); ?>
     <?php echo maak_invoerveld_label_links("Nieuwe wachtwoord", "password"); ?>
@@ -49,4 +49,4 @@ include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php
     <br/>
     <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

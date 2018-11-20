@@ -1,10 +1,10 @@
 <?php
 
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
 // Kijken of we student zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("STUDENT"));
 
-include_once '/srv/prjtinapp' . '/php/klasse/controller/student_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/student_controller.php';
 
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $student_controller = new StudentController($gebruikersnaam);
@@ -72,8 +72,8 @@ if(isset($_POST['opslaan'])){
 
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Invullen bevraging (Doelgroep: ' . $doelgroep . ')';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/html.php';
 
 /**
  * Inhoud van de pagina
@@ -84,7 +84,7 @@ if ($bevraging === null){
     echo maak_dashboard_knop();
 }
 else {
-    include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bevraging.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/bevraging.php';
     echo '<br>';
     echo maak_htmlbevraging_div($bevraging);
     echo '<br>';
@@ -93,4 +93,4 @@ else {
     echo maak_submit_knop("Indienen", "thumbsup", "opslaan", false, true, "warning");
 }
 
-include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php';
+include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php';

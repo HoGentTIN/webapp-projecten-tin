@@ -1,5 +1,5 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/domein/opleiding.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/opleiding.php';
 
 /**
  * Class OpleidingsOnderdeel

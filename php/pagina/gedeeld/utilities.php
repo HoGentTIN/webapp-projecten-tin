@@ -1,5 +1,5 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/databank/enum/databank_fouten.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/enum/databank_fouten.php';
 // klasse met alle standaard hulpmiddelen voor de website
 class UTILITIES
 {

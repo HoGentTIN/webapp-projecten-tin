@@ -1,8 +1,8 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/databank/databank.php';
-include_once '/srv/prjtinapp' . '/php/klasse/controller/controller.php';
-include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php';
-include_once '/srv/prjtinapp' . '/php/klasse/controller/periode_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/databank.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/periode_controller.php';
 
 class SessieController extends Controller
 {

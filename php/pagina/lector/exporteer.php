@@ -1,11 +1,11 @@
 <?php
 
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
 // Kijken of we beheerder zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("LECTOR"));
 
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bevraging.php';
-include_once '/srv/prjtinapp' . '/php/klasse/databank/bevraging_mapper.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/bevraging.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/bevraging_mapper.php';
 
 $bm = new BevragingMapper();
 $bevragingen = $bm->geef_bevragingen("%", "Analyse", true);

@@ -1,6 +1,6 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
-include_once '/srv/prjtinapp' . '/php/klasse/controller/gebruiker_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
 
 if(isset($_POST['reset']))
 {
@@ -20,7 +20,7 @@ if(isset($_POST['reset']))
 }
 
 $_GET['pagina_titel'] = 'Wachtwoord resetten';
-include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Gebruikersnaam"); ?>
     <div class="clearfix"></div><hr />
@@ -28,4 +28,4 @@ include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
     <br />
     <?php echo maak_dashboard_knop("aanmelden"); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

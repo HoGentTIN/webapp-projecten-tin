@@ -1,5 +1,5 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/domein/uitzondering/validatie_uitzondering.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/uitzondering/validatie_uitzondering.php';
 /**
  * Class Periode
  * Beschrijft een periode binnen een academijaar volgens zittijd

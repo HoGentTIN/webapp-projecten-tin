@@ -7,3 +7,6 @@ ErrorDocument 500 /404.php
 RewriteEngine On
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^(.*)$ /404.php
+
+SetEnv SRV_DOC_ROOT /srv/prjtinapp
+SetEnv SRV_ALIAS /prjtin

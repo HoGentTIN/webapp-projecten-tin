@@ -3,16 +3,16 @@
     $profiel = $gebruiker->geef_voornaam() . " " . $gebruiker->geef_familienaam() . " (" . $gebruiker->geef_gebruikertype() . ")";
     // kijken of we een profielfoto vinden of niet
     $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruiker->geef_gebruikertype() . '/' . $gebruiker->geef_gebruikersnaam() . '.jpg');
-    if(file_exists('/srv/prjtinapp' .. $profiel_foto)){
-        $profiel_foto = '<img class="profiel-foto" src="' . $profiel_foto . '" />';
+    if(file_exists($_SERVER['SRV_DOC_ROOT'] . $profiel_foto)){
+        $profiel_foto = '<img class="profiel-foto" src="' . $_SERVER['SRV_DOC_ROOT'] . $profiel_foto . '" />';
     }
-    // bestat niet, dus generiek manneke tonen
+    // bestaat niet, dus generieke man als afbeelding tonen
     else {
         $profiel_foto = '<span class="ion-person"></span>';
     }
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary navigatiebalk fixed-top">
-    <img class="logo" src="/afbeelding/logo/hogent.png" />
+    <img class="logo" src="<?php $_SERVER['SRV_ALIAS']?>/afbeelding/logo/hogent.png" />
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,14 +33,14 @@
                     <?php echo $profiel ?> &nbsp;
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/prjtin/php/pagina/wijzig_wachtwoord.php">
+                    <a class="dropdown-item" href="<?php $_SERVER['SRV_ALIAS'] ?>/php/pagina/wijzig_wachtwoord.php">
                         <span class="ion-key"></span>&nbsp;&nbsp;Wijzig wachtwoord
                     </a>
                     <a class="dropdown-item" href="mailto:sebastiaan.labijn@hogent.be?subject=[Projecten2sus] Probleem/Bug">
                         <span class="ion-clipboard"></span>&nbsp;&nbsp;Meld een probleem
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/prjtin/php/pagina/afmelden.php">
+                    <a class="dropdown-item" href="<?php $_SERVER['SRV_ALIAS'] ?>/php/pagina/afmelden.php">
                         <span class="ion-power"></span>&nbsp;&nbsp;Afmelden
                     </a>
                 </div>

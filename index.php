@@ -1,5 +1,5 @@
 <?php
-    include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
 
     // Als gebruiker al aangemeld is naar zijn startpagina sturen
     if($sessie_controller->is_aangemeld()) {
@@ -22,7 +22,7 @@
     }
 
     $_GET['pagina_titel'] = 'Aanmelden';
-    include '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+    include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Gebruikersnaam"); ?>
     <?php echo maak_invoerveld_label_links("Wachtwoord", "password"); ?>
@@ -30,6 +30,6 @@
     <hr/>
     <?php echo maak_submit_knop("Aanmelden", "log-in", "aanmelden"); ?>
     <br/>
-    <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="/prjtin/reset_wachtwoord.php">hier</a>!</label>
+    <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="<?php $_SERVER['SRV_ALIAS'] ?>/reset_wachtwoord.php">hier</a>!</label>
 <!-- footer includen -->
-<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

@@ -3,14 +3,14 @@
  * Beheer pagina voor periodes voor de beheerder
  */
 
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/tabel.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/utilities.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/tabel.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/utilities.php';
 // Kijken of we beheerder zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("BEHEERDER"));
 
 // BeheerderController aanmaken voor huidige beheerder
-include_once '/srv/prjtinapp' . '/php/klasse/controller/beheerder_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/beheerder_controller.php';
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $beheerder_controller = new BeheerderController($gebruikersnaam);
 
@@ -91,7 +91,7 @@ function voeg_gebruikers_toe ($beheerder_controller, $nieuwe_gebruikers, $gebrui
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Importeer gebruikers';
 $_GET['pagina_uploads'] = '1';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 ?>
             <table>
                 <tr>
@@ -154,4 +154,4 @@ include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
             &nbsp;&nbsp;
             <?php echo maak_submit_knop("Importeren", "arrow-swap", "importeren", false, true, "warning"); ?>
 <!-- footer includen -->
-<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

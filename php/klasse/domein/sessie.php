@@ -1,7 +1,7 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/domein/periode.php';
-include_once '/srv/prjtinapp' . '/php/klasse/domein/sessiegroep.php';
-include_once '/srv/prjtinapp' . '/php/klasse/domein/vragenlijst.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/periode.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/sessiegroep.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/vragenlijst.php';
 
 /**
  * Class Sessie

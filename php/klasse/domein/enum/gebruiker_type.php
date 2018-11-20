@@ -1,5 +1,5 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/gedeeld/enum.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/gedeeld/enum.php';
 
 class GEBRUIKER_TYPE extends Enum {
     protected static $caseSensitive = false;

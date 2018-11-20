@@ -1,9 +1,9 @@
 <?php
-    include_once '/srv/prjtinapp' . '/php/klasse/controller/lector_controller.php';
-    include_once '/srv/prjtinapp' . '/php/klasse/databank/databank.php';
-    include_once '/srv/prjtinapp' . '/php/klasse/domein/bevraging.php';
-    include_once '/srv/prjtinapp' . '/php/klasse/domein/vragenlijst.php';
-    include_once '/srv/prjtinapp' . '/php/klasse/domein/gebruiker.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/lector_controller.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/databank.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/bevraging.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/vragenlijst.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/gebruiker.php';
 
 
     $time_start = microtime(true);

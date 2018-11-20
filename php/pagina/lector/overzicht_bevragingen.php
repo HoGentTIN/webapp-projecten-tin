@@ -3,14 +3,14 @@
  * Beheer pagina voor periodes voor de beheerder
  */
 
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/sessie.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/tabel.php';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bevraging.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/html.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/tabel.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/bevraging.php';
 // Kijken of we lector zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("LECTOR"));
 
-include_once '/srv/prjtinapp' . '/php/klasse/controller/lector_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/lector_controller.php';
 
 $gebruikersnaam = $sessie_controller->geef_aangemelde_gebruiker()->geef_gebruikersnaam();
 $lector_controller = new LectorController($gebruikersnaam);
@@ -108,11 +108,11 @@ foreach($bevragingen as $bevraging){
 // aantal elementen voor volledige tabel
 $totaal_aantal_elementen = count($bevragingen);
 // generieke code uitvoeren voor pagina met tabel die bladerbaar is
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/bladeren.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/bladeren.php';
 
 // welkom banner + afmelden
 $_GET['pagina_titel'] = 'Overzicht bevragingen';
-include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/header.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 
 ?>
 <?php
@@ -183,4 +183,4 @@ echo maak_tabel($filters, $headers, $data_ids, $data, "bevragingen", $huidige_pa
     <br><br>
 <?php echo maak_dashboard_knop(); ?>
     <!-- footer includen -->
-<?php include '/srv/prjtinapp' . '/php/pagina/gedeeld/footer.php'; ?>
+<?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

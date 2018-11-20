@@ -1,7 +1,7 @@
 <?php
-include_once '/srv/prjtinapp' . '/php/klasse/controller/controller.php';
-include_once '/srv/prjtinapp' . '/php/klasse/databank/periode_mapper.php';
-include_once '/srv/prjtinapp' . '/php/klasse/domein/periode.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/periode_mapper.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/domein/periode.php';
 
 /**
  * Class PeriodeController

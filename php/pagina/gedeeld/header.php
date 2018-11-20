@@ -1,5 +1,5 @@
 <?php
-    include_once '/srv/prjtinapp' . '/php/pagina/gedeeld/html.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/html.php';
 
     // Kijken of er een sessiecontroller is voor deze pagina
     if(!isset($sessie_controller)) { $sessie_controller = new SessieController(); }
@@ -14,17 +14,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/prjtin/vendor/driftyco/ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="/prjtin/vendor/twitter/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/prjtin/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link href="/prjtin/css/style.css" rel="stylesheet">
+    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/vendor/driftyco/ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/vendor/twitter/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/css/style.css" rel="stylesheet">
     <title> <?php echo $_GET['pagina_titel'] ?> </title>
 </head>
 <body>
 <?php
 // navigatie tonen indien aangemeld
 if ($sessie_controller->is_aangemeld()) {
-    include '/srv/prjtinapp' . '/php/pagina/gedeeld/navigatie.php';
+    include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/navigatie.php';
 }
 ?>
 <!-- eigenlijke inhoud pagina starten -->
