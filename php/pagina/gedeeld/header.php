@@ -14,10 +14,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/vendor/driftyco/ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link href="<?php $_SERVER['SRV_ALIAS'] ?>/css/style.css" rel="stylesheet">
+    <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/driftyco/ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/css/style.css" rel="stylesheet">
     <link href="/prjtin/css/style.css" rel="stylesheet">
     <title> <?php echo $_GET['pagina_titel'] ?> </title>
 </head>
