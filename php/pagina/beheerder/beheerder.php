@@ -22,9 +22,10 @@ $aantal_gebruikers = 20; //$gebruiker->geef_aantal_gebruikers();
 <!-- Eignelijke inhoud pagina -->
 <?php
 echo '<div class="row">';
-    echo maak_dashboard_kaart("blauw", $aantal_periodes, "Periodes", "/php/pagina/beheerder/beheer_periodes.php", "Beheer Periodes");
-    echo maak_dashboard_kaart("rood", $aantal_actieve_gebruikers, "Actieve gebruikers", "/php/pagina/beheerder/beheer_gebruikers.php", "Beheer Gebruikers");
-    echo maak_dashboard_kaart("groen", $aantal_gebruikers, "Gebruikers", "/php/pagina/beheerder/importeer_gebruikers.php", "Importeer Gebruikers");
+    $url_pagina = _SERVER['SRV_ALIAS'] . '/php/pagina/beheerder/';
+    echo maak_dashboard_kaart("blauw", $aantal_periodes, "Periodes", $url_pagina . "beheer_periodes.php", "Beheer Periodes");
+    echo maak_dashboard_kaart("rood", $aantal_actieve_gebruikers, "Actieve gebruikers", $url_pagina . "beheer_gebruikers.php", "Beheer Gebruikers");
+    echo maak_dashboard_kaart("groen", $aantal_gebruikers, "Gebruikers", $url_pagina . "importeer_gebruikers.php", "Importeer Gebruikers");
 echo '</div>';
 ?>
 <!-- footer includen -->

@@ -22,8 +22,9 @@ $aantal_ingevulde_bevragingen = $student_controller->geef_aantal_ingevulde_bevra
 <!-- Eignelijke inhoud pagina -->
 <div class="row">
 <?php
-    echo maak_dashboard_kaart("groen", $aantal_open_bevragingen, "Openstaande bevragingen", "/php/pagina/student/overzicht_bevragingen.php?voltooidop=false", "Bekijk bevragingen");
-    echo maak_dashboard_kaart("rood", $aantal_ingevulde_bevragingen, "Ingevulde bevragingen", "/php/pagina/student/overzicht_bevragingen.php?voltooidop=true", "Bekijk bevragingen");
+    $url_pagina = $_SERVER['SRV_ALIAS'] . "/php/pagina/student/overzicht_bevragingen.php";
+    echo maak_dashboard_kaart("groen", $aantal_open_bevragingen, "Openstaande bevragingen", $url_pagina . "?voltooidop=false", "Bekijk bevragingen");
+    echo maak_dashboard_kaart("rood", $aantal_ingevulde_bevragingen, "Ingevulde bevragingen", $url_pagina . "?voltooidop=true", "Bekijk bevragingen");
 ?>
 <div>
 <!-- footer includen -->

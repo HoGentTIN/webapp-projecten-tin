@@ -4,7 +4,7 @@
     // kijken of we een profielfoto vinden of niet
     $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruiker->geef_gebruikertype() . '/' . $gebruiker->geef_gebruikersnaam() . '.jpg');
     if(file_exists($_SERVER['SRV_DOC_ROOT'] . $profiel_foto)){
-        $profiel_foto = '<img class="profiel-foto" src="' . $_SERVER['SRV_DOC_ROOT'] . $profiel_foto . '" />';
+        $profiel_foto = '<img class="profiel-foto" src="' . $_SERVER['SRV_ALIAS'] . $profiel_foto . '" />';
     }
     // bestaat niet, dus generieke man als afbeelding tonen
     else {

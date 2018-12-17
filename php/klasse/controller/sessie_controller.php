@@ -109,6 +109,6 @@ class SessieController extends Controller
      * Ga naar de startpagina
      */
     public function ga_naar_pagina($pagina_url){
-        header("location:" . $_SERVER['SITE_ROOT'] . $pagina_url);
+        header("location:" . $_SERVER['SRV_'] . $pagina_url);
     }
 }
