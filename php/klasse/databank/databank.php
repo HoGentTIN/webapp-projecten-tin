@@ -38,10 +38,10 @@ class DATABANK
      * @return string    De foutboodschap
      */
     public function geef_sql_fout() : string {
-        if(!isset($this->_sql_fout)){
-            $this->_sql_fout = "";
+        if(isset($this->_sql_fout)){
+            return $this->_sql_fout;
         }
-        return $this->_sql_fout;
+        return "";
     }
 
     /**
@@ -57,7 +57,10 @@ class DATABANK
      * @return string      De query
      */
     public function geef_sql_query() : string {
-        return $this->_sql_query;
+        if (isset($this->_sql_query)) {
+            return $this->_sql_query;
+        }
+        return "";
     }
 
     /**
@@ -78,6 +81,7 @@ class DATABANK
             $this->_verbinding = new PDO($MYSQL, $GEBRUIKERSNAAM, $WACHTWOORD);
         }
         catch (PDOException $e){
+            echo "Could not establish connection to the database!<br>";
             echo $e->getMessage();
         }
     }
