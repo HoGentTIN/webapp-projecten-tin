@@ -159,5 +159,41 @@ class UTILITIES
         // resultaten teruggeven
         return $resultaten;
     }
+
+    /**
+     * Geef een html tag met de profielfoto van een gebruiker
+     * @param string $gebruikers_type       Het type van de gebruiker (student, lector, beheerder)
+     * @param string $gebruikers_naam       De username van de gebruikers
+     * @return string                       De HTML tag
+     */
+    public static function GEEF_HTML_PROFIELFOTO_KLEIN(string $gebruikers_type, string $gebruikers_naam) : string {
+        $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruikers_type . '/' . $gebruikers_naam . '.jpg');
+        if(file_exists($_SERVER['SRV_DOC_ROOT'] . $profiel_foto)){
+            $profiel_foto = '<img class="profiel-foto" src="' . $_SERVER['SRV_ALIAS'] . $profiel_foto . '" />';
+        }
+        // bestaat niet, dus generieke man als afbeelding tonen
+        else {
+            $profiel_foto = '<span class="ion-person"></span>';
+        }
+        return $profiel_foto;
+    }
+
+    /**
+     * Geef een html tag met de profielfoto van een gebruiker
+     * @param string $gebruikers_type       Het type van de gebruiker (student, lector, beheerder)
+     * @param string $gebruikers_naam       De username van de gebruikers
+     * @return string                       De HTML tag
+     */
+    public static function GEEF_HTML_PROFIELFOTO(string $gebruikers_type, string $gebruikers_naam) : string {
+        $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruikers_type . '/' . $gebruikers_naam . '.jpg');
+        if(file_exists($_SERVER['SRV_DOC_ROOT'] . $profiel_foto)){
+            $profiel_foto = '<img src="' . $_SERVER['SRV_ALIAS'] . $profiel_foto . '" />';
+        }
+        // bestaat niet, dus generieke man als afbeelding tonen
+        else {
+            $profiel_foto = '<span class="ion-person"></span>';
+        }
+        return $profiel_foto;
+    }
 }
 ?>

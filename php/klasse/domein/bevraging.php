@@ -29,7 +29,7 @@ class Bevraging {
      * @param bool $met_score (Standaard true)
      * @param float $score (Standaard 0)
      */
-    public function __construct(int $id, string $doelgroep, Vragenlijst $vragenlijst, Gebruiker $intedienden_door=null, DateTime $deadline, DateTime $voltooid_op=null, bool $is_anoniem=false, bool $met_score=true, float $score=0) {
+    public function __construct(int $id, string $doelgroep, Vragenlijst $vragenlijst, Gebruiker $intedienden_door=null, DateTime $deadline=null, DateTime $voltooid_op=null, bool $is_anoniem=false, bool $met_score=true, float $score=0) {
         $this->_id = $id;
         $this->_doelgroep = $doelgroep;
         $this->_vragenlijst = $vragenlijst;

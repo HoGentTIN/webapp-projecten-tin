@@ -11,16 +11,18 @@ class OpleidingsOnderdeel {
     private $_id;
     private $_naam;
     private $_opleiding;
+    private $_projectgroepen;
 
     /**
      * OpleidingsOnderdeel constructor
      * @param int $id
      * @param string $naam
      */
-    public function __construct(int $id, string $naam, Opleiding $opleiding) {
+    public function __construct(int $id, string $naam, Opleiding $opleiding, $project_groepen=[]) {
         $this->_id = $id;
         $this->_naam = $naam;
         $this->_opleiding = $opleiding;
+        $this->_projectgroepen = $project_groepen;
     }
 
     /**
@@ -42,6 +44,29 @@ class OpleidingsOnderdeel {
      */
     public function geef_opleiding(): Opleiding {
         return $this->_opleiding;
+    }
+
+    /**
+     * @return Project_Groep[]
+     */
+    public function geef_project_groepen() : array {
+        return $this->_projectgroepen;
+    }
+
+    /**
+     * Voeg projectgroep toe aan olod
+     * @param Project_Groep $pg
+     * @throws ValidatieUitzondering
+     */
+    public function voeg_project_groep_toe(Project_Groep $pg) {
+        // Enkel toevoegen indien nog geen groep met die naam voor die periode gekoppeld is
+        foreach ($this->_projectgroepen as $project_groep){
+            if ($project_groep->is_gelijk_aan($pg)) {
+                throw new ValidatieUitzondering("Project groep bestaat reeds voor dit opleidingsonderdeel!");
+            }
+        }
+        // uniek dus toevoegen
+        array_push($this->_projectgroepen, $pg);
     }
 
     /**

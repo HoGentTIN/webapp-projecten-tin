@@ -155,4 +155,31 @@ class OlodMapper extends Mapper
         // kijken we of we effectief een periode hebben toegevoegd
         return $resultaten === 1;
     }
+
+    /**
+     * @param string $gebruikersnaam    De gebruikersnaam van de lector
+     * @param int $jaar         Academiejaar als getal (Default: 0 voor allemaal)
+     * @param int $zittijd      Zittijd als getal (Default: 0 voor alles)
+     * @return OpleidingsOnderdeel[]
+     */
+    public function geef_olods_van_lector(string $gebruikersnaam, int $jaar, int $zittijd) : array {
+        $sql = "SELECT o.id, o.naam, o_o.opleiding_id as 'oplid', opl.naam as 'oplnaam' " .
+            "FROM olod as o " .
+            "JOIN opleiding_olod as o_o on o_o.olod_id = o.id " .
+            "JOIN opleiding as opl on opl.id = o_o.opleiding_id " .
+            "ORDER BY o.naam";
+        // Query uitvoeren en alle resultaten opvragen
+        $resultaten = DATABANK::geef_instantie()->voer_query_uit(SQL_QUERY_TYPE::value('SELECT_ALL'), $sql);
+        // Lege lijst van periodes om de gemapte periodes bij te houden
+        $olods = [];
+        foreach($resultaten as $resultaat){
+            $olod_id = intval($resultaat['id']);
+            $olod_naam = $resultaat['naam'];
+            $opl_id = intval($resultaat['oplid']);
+            $opl_naam = $resultaat['oplnaam'];
+            $opl = new Opleiding($opl_id, $opl_naam);
+            $olods[] = new OpleidingsOnderdeel($olod_id, $olod_naam, $opl);
+        }
+        return $olods;
+    }
 }

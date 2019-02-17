@@ -1,6 +1,6 @@
 <?php
 /**
- * Beheer pagina voor periodes voor de beheerder
+ * overzichtspagina van alle bevragingen voor lector
  */
 
 include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';

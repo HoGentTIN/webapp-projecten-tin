@@ -28,10 +28,9 @@ class PeriodeMapper extends Mapper
             $tot = new DateTime($resultaat['tot']);
 
             try {
-                $periodes[] = new Periode($jaar,$zittijd, $van, $tot);
+                $periodes[] = new Periode($jaar, $zittijd, $van, $tot);
             }
             catch (ValidatieUitzondering $ve) {
-                // niets doen
             }
         }
 

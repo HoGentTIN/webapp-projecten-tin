@@ -100,7 +100,7 @@ function maak_tabel_toevoeg_rij($kolommen) {
  * @return string
  */
 function maak_tabel_header_rij($headers) {
-    $header_rij = '<thead  class="thead-dark">';
+    $header_rij = '<thead class="thead-dark">';
     foreach($headers as $header){
         $header_rij .= '<th scope="col">' . $header . '</th>';
     }
@@ -216,24 +216,26 @@ function maak_tabel_detail_rij($rij_id, array $details_rij, array $acties){
         $html_rij .= '<td>' . $detail_rij .'</td>';
     }
     // acties toevoeven voor deze rij
-    $html_rij .= '<td>';
-    if (array_key_exists("toevoegen", $acties) && $acties['toevoegen'] === true) {
-        $html_rij .= maak_submit_knop("", "plus", "toevoegen", false, true, "link");
-    }
-    if (array_key_exists( "openen", $acties) && $acties['openen'] === true) {
-        $html_rij .= maak_submit_knop("", "search", "openen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
-    }
-    if (array_key_exists( "bewerken", $acties) && $acties['bewerken'] === true) {
-        $html_rij .= maak_submit_knop("", "edit ", "bewerken", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
-    }
-    if (array_key_exists("wissen", $acties) && $acties['wissen'] === true) {
-        $html_rij .= maak_submit_knop("", "loop", "wissen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
-    }
-    if (array_key_exists("verwijderen", $acties) && $acties['verwijderen'] === true) {
-        $html_rij .= maak_submit_knop("", "trash-a", "verwijderen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
-    }
-    if (array_key_exists( "opslaan", $acties) && $acties['opslaan'] === true) {
-        $html_rij .= maak_submit_knop("", "archive", "opslaan", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+    if (count($acties) > 0) {
+        $html_rij .= '<td>';
+        if (array_key_exists("toevoegen", $acties) && $acties['toevoegen'] === true) {
+            $html_rij .= maak_submit_knop("", "plus", "toevoegen", false, true, "link");
+        }
+        if (array_key_exists( "openen", $acties) && $acties['openen'] === true) {
+            $html_rij .= maak_submit_knop("", "search", "openen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+        }
+        if (array_key_exists( "bewerken", $acties) && $acties['bewerken'] === true) {
+            $html_rij .= maak_submit_knop("", "edit ", "bewerken", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+        }
+        if (array_key_exists("wissen", $acties) && $acties['wissen'] === true) {
+            $html_rij .= maak_submit_knop("", "loop", "wissen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+        }
+        if (array_key_exists("verwijderen", $acties) && $acties['verwijderen'] === true) {
+            $html_rij .= maak_submit_knop("", "trash-a", "verwijderen", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+        }
+        if (array_key_exists( "opslaan", $acties) && $acties['opslaan'] === true) {
+            $html_rij .= maak_submit_knop("", "archive", "opslaan", false, false, "link", "submit_na_opslaan_id('" . $rij_id . "');");
+        }
     }
     $html_rij .= '</td>';
     $html_rij .= '</tr>';

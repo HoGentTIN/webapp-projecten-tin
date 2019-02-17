@@ -7,3 +7,6 @@ php/configuratie/.*.ini
 # Dependencies
 vendor/
 composer.lock
+
+# Vagrant
+.vagrant/

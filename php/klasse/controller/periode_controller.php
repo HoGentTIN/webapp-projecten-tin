@@ -36,11 +36,11 @@ class PeriodeController extends Controller
             //  2. jaar = 0 en zittijden zijn gelijk
             //  3. jaren zijn gelijk & zittijd = 0
             //  4. jar = 0 & zittijd = 0
-            if(($periode->geef_jaar() === $jaar &&
+            if(($periode->geef_academie_jaar() === $jaar &&
                 $periode->geef_zittijd() === $zittijd) ||
                 (0 === $jaar &&
                     $periode->geef_zittijd() === $zittijd) ||
-                ($periode->geef_jaar() === $jaar &&
+                ($periode->geef_academie_jaar() === $jaar &&
                     0 === $zittijd) ||
                 (0 === $jaar &&
                     0 === $zittijd)){
@@ -56,7 +56,7 @@ class PeriodeController extends Controller
      */
     public function geef_periode (int $jaar, int $zittijd) : Periode {
         foreach($this->_periodes as $periode){
-            if($periode->geef_jaar() === $jaar &&
+            if($periode->geef_academie_jaar() === $jaar &&
                 $periode->geef_zittijd() === $zittijd){
                 return $periode;
             }
@@ -72,7 +72,7 @@ class PeriodeController extends Controller
      */
     public function bestaat (int $jaar, int $zittijd) : bool{
         foreach($this->_periodes as $periode){
-            if($periode->geef_jaar() === $jaar &&
+            if($periode->geef_academie_jaar() === $jaar &&
                 $periode->geef_zittijd() === $zittijd){
                 return true;
             }

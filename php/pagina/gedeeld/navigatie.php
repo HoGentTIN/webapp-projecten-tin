@@ -1,15 +1,9 @@
 <?php
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/utilities.php';
     $gebruiker = $sessie_controller->geef_aangemelde_gebruiker();
     $profiel = $gebruiker->geef_voornaam() . " " . $gebruiker->geef_familienaam() . " (" . $gebruiker->geef_gebruikertype() . ")";
     // kijken of we een profielfoto vinden of niet
-    $profiel_foto = strtolower('/afbeelding/profiel/' . $gebruiker->geef_gebruikertype() . '/' . $gebruiker->geef_gebruikersnaam() . '.jpg');
-    if(file_exists($_SERVER['SRV_DOC_ROOT'] . $profiel_foto)){
-        $profiel_foto = '<img class="profiel-foto" src="' . $_SERVER['SRV_ALIAS'] . $profiel_foto . '" />';
-    }
-    // bestaat niet, dus generieke man als afbeelding tonen
-    else {
-        $profiel_foto = '<span class="ion-person"></span>';
-    }
+    $profiel_foto = UTILITIES::GEEF_HTML_PROFIELFOTO_KLEIN($gebruiker->geef_gebruikertype(),$gebruiker->geef_gebruikersnaam());
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary navigatiebalk fixed-top">
     <img class="logo" src="<?php echo $_SERVER['SRV_ALIAS']?>/afbeelding/logo/hogent.png" />

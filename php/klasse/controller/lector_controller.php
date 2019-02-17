@@ -1,5 +1,7 @@
 <?php
 include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/gebruiker_controller.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/olod_mapper.php';
+include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/databank/project_groep_mapper.php';
 
 /**
  * Class LectorController
@@ -63,5 +65,34 @@ class LectorController extends GebruikerController
     public function geef_types_vragenlijsten($huidige_tester="%", $huidige_doelgroep="%", $voltooid=null) : array {
         $bm = new BevragingMapper();
         return $bm->geef_types_vragenlijsten($huidige_tester, $huidige_doelgroep, $voltooid);
+    }
+
+    /**
+     * @return OpleidingsOnderdeel
+     */
+    public function geef_olod($olodid) : OpleidingsOnderdeel {
+        $om = new OlodMapper();
+        return $om->geef_olod($olodid);
+    }
+
+    /**
+     * @param OpleidingsOnderdeel $olod
+     * @param Periode $periode
+     * @return Project_Groep[]
+     */
+    public function geef_projectgroepen_olod(OpleidingsOnderdeel $olod, Periode $periode) : array {
+        $pgm = new ProjectGroepMapper();
+        return $pgm->geef_project_groepen($olod->geef_id(), $periode);
+    }
+
+    /**
+     * Geeft de olods waar de lector voor huidige periode is aan verbonden
+     * @param int $jaar             Nummer van academiejaar (Default: 0 voor allemaal)
+     * @param int $zittijd          Nummer van zittijd (Default: 0 voor alles)
+     * @return OpleidingsOnderdeel[]
+     */
+    public function geef_olods(int $jaar=0, int $zittijd=0) : array {
+        $om = new OlodMapper();
+        return $om->geef_olods_van_lector($this->geef_gebruikersnaam(), $jaar, $zittijd);
     }
 }

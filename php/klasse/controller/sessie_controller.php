@@ -92,14 +92,17 @@ class SessieController extends Controller
      */
     public function controleer_toegang_pagina($gebruiker_type) {
         // Kijken of hij aangemeld is
+        $_SESSION['ERROR'] = "NO ERROR";
         if($this->is_aangemeld()){
             // Als aangemelde gebruiker zijn type niet overeenkomt met gewenste, naar startpagina
             if(strcasecmp($this->geef_aangemelde_gebruiker()->geef_gebruikertype(), $gebruiker_type)) {
+                $_SESSION['ERROR'] = 'strcasecmp($this->geef_aangemelde_gebruiker()->geef_gebruikertype(), $gebruiker_type)';
                 $this->ga_naar_startpagina();
             }
         }
         // Niet aangemeld dus naar aanmeldpagina
         else {
+            $_SESSION['ERROR'] = "NIET AANGEMELD";
             $this->ga_naar_startpagina();
         }
     }

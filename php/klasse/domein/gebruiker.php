@@ -111,6 +111,10 @@ class Gebruiker {
         return $this->_is_actief;
     }
 
+    public function geef_pad_profielfoto() {
+
+    }
+
     /**
      * Geeft het object als string terug.
      */

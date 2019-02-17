@@ -1,7 +1,7 @@
 <?php
 
 include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
-// Kijken of we student zijn, anders geen toegang pagina
+// Kijken of we lector zijn, anders geen toegang pagina
 $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("LECTOR"));
 
 include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/lector_controller.php';

@@ -63,14 +63,14 @@ $data_ids = [];
 $acties = [];
 foreach($periodes as $periode){
     $data[] = [
-        $periode->geef_jaar(),
+        $periode->geef_academie_jaar(),
         $periode->geef_zittijd(),
         $periode->geef_van()->format('d/m/Y'),
         $periode->geef_tot()->format('d/m/Y')
     ];
     // toegestane acties per rij, enkel verwijderen
     $acties[] = ["verwijderen" => true];
-    $data_ids[] = $periode->geef_jaar() . '_' . $periode->geef_zittijd();
+    $data_ids[] = $periode->geef_academie_jaar() . '_' . $periode->geef_zittijd();
 }
 // aantal elementen voor volledige tabel
 $totaal_aantal_elementen = count($periodes);
