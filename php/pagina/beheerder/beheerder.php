@@ -27,6 +27,7 @@ echo '<div class="row">';
     echo maak_dashboard_kaart("rood", $aantal_actieve_gebruikers, "Actieve gebruikers", $url_pagina . "beheer_gebruikers.php", "Beheer Gebruikers");
     echo maak_dashboard_kaart("groen", $aantal_gebruikers, "Gebruikers", $url_pagina . "importeer_gebruikers.php", "Importeer Gebruikers");
     echo maak_dashboard_kaart("antraciet", 1, "Databank", $url_pagina . "databank_query.php", "Query Databank");
+    echo maak_dashboard_kaart("hemelsblauw", count(array_keys($_SERVER)), "Server variabelen", $url_pagina . "server.php", "PHP configuratie");
 echo '</div>';
 ?>
 <!-- footer includen -->

@@ -3,10 +3,10 @@
  * Beheer pagina voor periodes voor de beheerder
  */
 
-include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
-include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/tabel.php';
-// Kijken of we beheerder zijn, anders geen toegang pagina
-$sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("BEHEERDER"));
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/sessie.php';
+    include_once $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/tabel.php';
+    // Kijken of we beheerder zijn, anders geen toegang pagina
+    $sessie_controller->controleer_toegang_pagina(GEBRUIKER_TYPE::value("BEHEERDER"));
 
 // BeheerderController aanmaken voor huidige beheerder
 include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/beheerder_controller.php';

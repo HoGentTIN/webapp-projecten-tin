@@ -49,26 +49,32 @@ define ('BESCHIKBARE_AANTALLEN_ELEMENTEN_PER_PAGINA',    [
  * @return string
  */
 function maak_tabel_filter_rij($filters, int $aantal_kolommen, $aantal_elementen_per_pagina=TOON_AANTAL_ELEMENTEN_PER_PAGINA::TIEN) {
-    $filter_rij = '<thead>';
-    foreach($filters as $filter){
-        $filter_rij .= '<th scope="col">';
-        switch ($filter['type']){
-            case TABELCEL_TYPE::LIJST:
-                $filter_rij .= call_user_func_array("maak_html_select", $filter['waarden']); break;
-            case TABELCEL_TYPE::TOGGLE:
-                $filter_rij .= call_user_func_array("maak_html_toggle", $filter['waarden']); break;
-            // lege kolom zonder filter
-            default: break;
+    // Enkel filters tonen als deze zijn opgegeven)
+    if ($filters !== []){
+        $filter_rij = '<thead>';
+        foreach($filters as $filter){
+            $filter_rij .= '<th scope="col">';
+            switch ($filter['type']){
+                case TABELCEL_TYPE::LIJST:
+                    $filter_rij .= call_user_func_array("maak_html_select", $filter['waarden']); break;
+                case TABELCEL_TYPE::TOGGLE:
+                    $filter_rij .= call_user_func_array("maak_html_toggle", $filter['waarden']); break;
+                // lege kolom zonder filter
+                default: break;
+            }
+            $filter_rij .= '</th>';
         }
+        // laatste kolom = actie kolom, daarboven lijst tonen met Toon x rijen
+        $filter_rij .= '<th colspan="' . ($aantal_kolommen - count($filters) - 1) . '"></th>';
+        $filter_rij .= '<th>';
+        $filter_rij .= maak_html_select("toon-aantal", 1, "this.form.submit", constant('BESCHIKBARE_AANTALLEN_ELEMENTEN_PER_PAGINA'), $aantal_elementen_per_pagina, "waarde", "naam");
         $filter_rij .= '</th>';
+        $filter_rij .= '</thead>';
+        return $filter_rij;
     }
-    // laatste kolom = actie kolom, daarboven lijst tonen met Toon x rijen
-    $filter_rij .= '<th colspan="' . ($aantal_kolommen - count($filters) - 1) . '"></th>';
-    $filter_rij .= '<th>';
-    $filter_rij .= maak_html_select("toon-aantal", 1, "this.form.submit", constant('BESCHIKBARE_AANTALLEN_ELEMENTEN_PER_PAGINA'), $aantal_elementen_per_pagina, "waarde", "naam");
-    $filter_rij .= '</th>';
-    $filter_rij .= '</thead>';
-    return $filter_rij;
+    else {
+        return "";
+    }
 }
 
 /**
@@ -170,8 +176,10 @@ function maak_tabel(array $filters, array $headers, array $data_ids, array $data
     $html_tabel .= maak_tabel_header_rij($headers);
     $html_tabel .= '<tbody>';
     $aantal_elementen = count($data);
+    $met_bladeren="1";
     // Exact aantal elementen invullen indien we alles willen zien
     if($aantal_elementen_per_pagina === TOON_AANTAL_ELEMENTEN_PER_PAGINA::ALLES){
+        $met_bladeren="0";
         $aantal_elementen_per_pagina = $aantal_elementen;
     }
     // Er zijn geen elementen dus "fout"boodschap tonen
@@ -186,7 +194,12 @@ function maak_tabel(array $filters, array $headers, array $data_ids, array $data
         $aantal_elementen_getoond = 0;
         // elementen voor de pagina toevoegen
         while ($huidig_element < $aantal_elementen && $aantal_elementen_getoond < $aantal_elementen_per_pagina) {
-            $html_tabel .= maak_tabel_detail_rij($data_ids[$huidig_element], $data[$huidig_element], $acties[$huidig_element]);
+            if (isset($acties[$huidig_element])){
+                $html_tabel .= maak_tabel_detail_rij($data_ids[$huidig_element], $data[$huidig_element], $acties[$huidig_element]);
+            }
+            else {
+                $html_tabel .= maak_tabel_detail_rij($data_ids[$huidig_element], $data[$huidig_element], []);
+            }
             $huidig_element += 1;
             $aantal_elementen_getoond += 1;
         }
@@ -194,7 +207,9 @@ function maak_tabel(array $filters, array $headers, array $data_ids, array $data
     if($nieuwe_rij !== []) {
         $html_tabel .= maak_tabel_toevoeg_rij($nieuwe_rij);
     }
-    $html_tabel .= maak_tabel_bladeren_rij($aantal_kolommen_tabel, $huidige_pagina, $max_paginas);
+    if ($met_bladeren === "1") {
+        $html_tabel .= maak_tabel_bladeren_rij($aantal_kolommen_tabel, $huidige_pagina, $max_paginas);
+    }
     $html_tabel .= '</tbody></table></div>';
     return $html_tabel;
 }
