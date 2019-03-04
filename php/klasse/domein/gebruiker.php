@@ -16,6 +16,7 @@ class Gebruiker {
     private $_familienaam;
     private $_email;
     private $_doelgroep;
+    private $_huidige_periode;
 
     /**
      * Gebruiker constructor.
@@ -23,11 +24,12 @@ class Gebruiker {
      * @param string $type (Standaard null)
      * @param string $voornaam
      * @param string $familienaam
+     * @param Periode $huidige_periode
      * @param string $email (Standaard null)
      * @param bool $is_actief (Standaard false)
      * @param array $olods (Standaard [])
      */
-    public function __construct(string $gebruikersnaam, string $type=null, string $voornaam, string $familienaam, string $email=null, bool $is_actief=false, string $doelgroep=null, array $olods=[]) {
+    public function __construct(string $gebruikersnaam, string $type=null, string $voornaam, string $familienaam, string $email=null, bool $is_actief=false, string $doelgroep=null, array $olods=[], Periode $huidige_periode=null) {
         $this->_gebruikersnaam = $gebruikersnaam;
         $this->_type = $type;
         $this->_voornaam = $voornaam;
@@ -36,6 +38,7 @@ class Gebruiker {
         $this->_is_actief = $is_actief;
         $this->_doelgroep = $doelgroep;
         $this->_olods = $olods;
+        $this->_huidige_periode = $huidige_periode;
     }
 
     /**
@@ -96,7 +99,7 @@ class Gebruiker {
 
     /**
      * Reset het wachtwoord van de gebruiker
-     * @param $nieuw_wachtwoord
+     * @param string $nieuw_wachtwoord
      */
     public function reset_wachtwoord($nieuw_wachtwoord) {
         $gm = new GebruikerMapper();
@@ -111,8 +114,12 @@ class Gebruiker {
         return $this->_is_actief;
     }
 
-    public function geef_pad_profielfoto() {
-
+    /**
+     * Gebruiker zijn huidige periode
+     * @return Periode
+     */
+    public function geef_huiduige_periode() : Periode {
+        return $this->_huidige_periode;
     }
 
     /**

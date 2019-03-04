@@ -20,7 +20,7 @@
         }
     }
 
-    $_GET['pagina_titel'] = 'Aanmelden';
+    $_GET['pagina_titel'] = 'Projecten TIN - Aanmelden';
     include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/header.php';
 ?>
     <?php echo maak_invoerveld_label_links("Gebruikersnaam"); ?>
@@ -31,11 +31,5 @@
     <br/>
     <label style="font-size: small">Wachtwoord vergeten? Reset het <a href="<?php echo $_SERVER['SRV_ALIAS'] ?>/reset_wachtwoord.php">hier</a>!</label>
     <br />
-    <div>
-        Error: <?php if (isset($_SESSION['ERROR'])) { echo $_SESSION['ERROR']; } else { echo "no error"; } ?>
-    </div>
-    <div>
-        Gebruiker: <?php if (isset($_SESSION['gebruiker'])) { echo $_SESSION['gebruiker']; } else { echo "geen gebruiker"; } ?>
-    </div>
 <!-- footer includen -->
 <?php include $_SERVER['SRV_DOC_ROOT'] . '/php/pagina/gedeeld/footer.php'; ?>

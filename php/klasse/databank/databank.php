@@ -103,7 +103,7 @@ class DATABANK
     /**
      * Voer een SQL query uit
      * @param $sql_query_type           Het type van de query (databank.enum.sql_query_type)
-     * @param string $sql_query                De query die uitgevoerd moet worden
+     * @param string $sql_query         De query die uitgevoerd moet worden
      * @param array $sql_parameters     Tabel met paramters voor de query (Standaard=[])
      * @return array|mixed|null         De resutlaten voo de query
      */
@@ -118,7 +118,7 @@ class DATABANK
             }
             // Voer query uit
             $stmt->execute();
-            // query b ijhouden
+            // query bijhouden
             $this->_sql_query = $stmt->queryString;
             if (count($sql_parameters) > 0) {
                 $this->_sql_query .= '<br>Parameters:<br>';
@@ -128,6 +128,7 @@ class DATABANK
             }
             // Aantal rijen bijhouden
             $this->_sql_aantal_rijen = $stmt->rowCount();
+            $this->_sql_fout = $stmt->errorCode();
             // Afhankelijk van het type query geven we een ander resultaat terug
             $resultaat = null;
             switch($sql_query_type){
@@ -136,14 +137,13 @@ class DATABANK
                 case SQL_QUERY_TYPE::value('DELETE'): $resultaat = $stmt->rowCount(); break;
                 case SQL_QUERY_TYPE::value('UPDATE'): $resultaat = $stmt->rowCount(); break;
                 case SQL_QUERY_TYPE::value('INSERT'): $resultaat = $stmt->rowCount(); break;
+                case SQL_QUERY_TYPE::value('MANAGE'): $resultaat = $stmt->rowCount(); break;
                 default:
                     $this->_sql_fout = "Ongeldig type SQL query";
                     $this->_sql_aantal_rijen = -1;
                     break;
             }
             $this->sluit_verbinding();
-
-            //$GLOBALS['SQL'] += 1;
 
             return $resultaat;
         }

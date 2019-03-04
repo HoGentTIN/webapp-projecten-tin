@@ -52,7 +52,7 @@ class GebruikerMapper extends Mapper
      * @return Gebruiker|null
      */
     public function geef_gebruiker(string $gebruikersnaam, string $wachtwoord="")  {
-        $sql = "SELECT voornaam, familienaam, wachtwoord, email, type, doelgroep, actief " .
+        $sql = "SELECT voornaam, familienaam, wachtwoord, email, type, doelgroep, actief " .  //, huidige_periode " .
                "FROM gebruiker " .
                "WHERE gebruikersnaam LIKE :gn ";
         $parameters = [
@@ -86,8 +86,11 @@ class GebruikerMapper extends Mapper
                         $olod_id = intval($resultaat['olod_id']);
                         $olods[] = $om->geef_olod($olod_id);
                     }
+                    // zijn huidig ingestelde periode ophalen
+                    $pm = new PeriodeMapper();
+                    $periode = null;//$pm->geef_periode_via_id($gebruiker['huidige_periode']);
                     // Gebruiker aanmaken met zijn waarden
-                    return new Gebruiker($gebruikersnaam, $gebruikerstype, $voornaam, $familienaam, $email, $is_actief, $doelgroep, $olods);
+                    return new Gebruiker($gebruikersnaam, $gebruikerstype, $voornaam, $familienaam, $email, $is_actief, $doelgroep, $olods, $periode);
                 }
                 //Ongeldig gebruikerstype!
                 else {
@@ -226,6 +229,52 @@ class GebruikerMapper extends Mapper
         }
         // Wachtwoord succesvol reset
         return true;
+    }
+
+    /**
+     * Wijzigen van de huidige periode van een gebruiker
+     * @param string $gebruikersnaam   De gebruikersnaam
+     * @param string $academiejaar
+     * @param string $zittijd
+     * @return bool                     Gelukt/niet gelukt
+     */
+    public function wijzig_periode(string $gebruikersnaam, string $academiejaar, string $zittijd) : bool
+    {
+        $this->_fout="";
+        // haal id of van de periode
+        $sql = "SELECT id " .
+            "FROM periode " .
+            "WHERE academiejaar LIKE :aj " .
+            "AND zittijd LIKE :zt";
+        $parameters = [
+            [':aj', $academiejaar],
+            [':zt', $zittijd]
+        ];
+        $periode_id = DATABANK::geef_instantie()->voer_query_uit(SQL_QUERY_TYPE::value('SELECT_COLUMN'), $sql, $parameters);
+
+        if(isset($periode_id)){
+            // exact 1 gebruiker gewenst want gebruikersnaam is uniek
+            $sql = "UPDATE gebruiker ".
+                "SET periode_id = :pid " .
+                "WHERE gebruikersnaam LIKE :gn ";
+            $parameters = [
+                [':gn', $gebruikersnaam],
+                [":pid", $periode_id]
+            ];
+            $aantal_rijen = DATABANK::geef_instantie()->voer_query_uit(SQL_QUERY_TYPE::value('INSERT'), $sql, $parameters);
+
+            if($aantal_rijen !== -1){
+                return true;
+            }
+            else {
+                $this->_fout = "Kon periode niet bijwerken.";
+                return false;
+            }
+        }
+        else {
+            $this->_fout = DATABANK::geef_instantie()->geef_sql_fout();
+            return false;
+        }
     }
 
     /**

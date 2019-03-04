@@ -15,31 +15,43 @@ include_once $_SERVER['SRV_DOC_ROOT'] . '/php/klasse/controller/beheerder_contro
 
 $query_results = "";
 if (isset($_POST['execquery'])) {
-    $query_results = DATABANK::geef_instantie()->voer_query_uit($_POST['sel_sql_type'], $_POST['ta_query']);
+    echo "SQL Type: " . $_POST['sel_sql_type'] . '<br>Query: ' . $_POST['ta_query'];
+    $query_results = DATABANK::geef_instantie()->voer_query_uit(SQL_QUERY_TYPE::value($_POST['sel_sql_type']), $_POST['ta_query']);
+    if(is_array($query_results)){
+        $query_results = json_encode($query_results);
+    }
+    else {
+        $query_results .= ' ';
+    }
 }
 ?>
 <!-- Eignelijke inhoud pagina -->
 <?php
 echo '<div class="container-inhoud">';
 echo '<div class="row col-12">';
-echo '<div class="col-">Type query' .
+echo 'Type query:' .
         '<select name="sel_sql_type">' .
             '<option value="SELECT_COLUMN">Selecteer kolom</option>' .
             '<option value="SELECT_ALL">Selecteer alle rijen</option>' .
             '<option value="DELETE">Verwijderen records</option>' .
             '<option value="UPDATE">Bijwerken records</option>' .
             '<option value="INSERT">Toevoegen records</option>' .
+            '<option value="MANAGE">Beheer tabellen</option>' .
         '</select>';
 echo '</div>';
+echo '<br>';
 echo '<div class="row col-12">';
-echo 'Uit te voeren query: <textarea name="ta_query">' . DATABANK::geef_instantie()->geef_sql_query() . '</textarea>';
+echo 'Uit te voeren query: <textarea name="ta_query" cols=100 rows="6">' . DATABANK::geef_instantie()->geef_sql_query() . '</textarea>';
 echo '</div>';
+echo '<br>';
 echo '<button class="btn btn-block btn-primary" type="submit" name="execquery">Execute Query</button>';
+echo '<br>';
 echo '<div class="row col-12">';
-echo 'Resultaten: <textarea name="ta_results">' . $query_results . '</textarea>';
+echo 'Resultaten: <textarea name="ta_results" cols="100" rows="15">' . $query_results . '</textarea>';
 echo '</div>';
+echo '<br>';
 echo '<div class="row col-12">';
-echo 'Fouten SQL: <textarea name="ta_errors">' . DATABANK::geef_instantie()->geef_sql_fout() . '</textarea>';
+echo 'Fouten SQL: <textarea name="ta_errors" cols="100" rows="3">' . DATABANK::geef_instantie()->geef_sql_fout() . '</textarea>';
 echo '</div>';
 echo '</div>';
 ?>

@@ -11,5 +11,6 @@ class SQL_QUERY_TYPE extends Enum {
         'SELECT_COLUMN' => 2,
         'SELECT_ALL' => 3,
         'INSERT' => 4,
+        'MANAGE' => 5,
     ];
 }

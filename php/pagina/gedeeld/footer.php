@@ -3,7 +3,7 @@
             </div>
         </div>
         <script src="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/components/jquery/jquery.js"></script>
-        <script src="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/twitter/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
         <script src="<?php echo $_SERVER['SRV_ALIAS'] ?>/js/bootstrap-toggle.min.js"></script>
         <!-- gedeelde javascript code -->
         <script type="application/javascript">

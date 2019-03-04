@@ -27,11 +27,14 @@
                     <?php echo $profiel ?> &nbsp;
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="<?php echo $_SERVER['SRV_ALIAS'] ?>/php/pagina/wijzig_periode.php">
+                        <span class="ion-android-calendar"></span>&nbsp;&nbsp;Wijzig academiejaar / zittijd
+                    </a>
                     <a class="dropdown-item" href="<?php echo $_SERVER['SRV_ALIAS'] ?>/php/pagina/wijzig_wachtwoord.php">
                         <span class="ion-key"></span>&nbsp;&nbsp;Wijzig wachtwoord
                     </a>
-                    <a class="dropdown-item" href="mailto:sebastiaan.labijn@hogent.be?subject=[Projecten2sus] Probleem/Bug">
-                        <span class="ion-clipboard"></span>&nbsp;&nbsp;Meld een probleem
+                    <a class="dropdown-item" href="mailto:sebastiaan.labijn@hogent.be?subject=[Projecten TIN] Probleem/Bug">
+                        <span class="ion-alert-circled"></span>&nbsp;&nbsp;Meld een probleem
                     </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo $_SERVER['SRV_ALIAS'] ?>/php/pagina/afmelden.php">

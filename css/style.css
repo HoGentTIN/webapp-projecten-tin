@@ -117,11 +117,11 @@ a, a:active, a:focus {
     background-color:#006fb8 !important; /* boostrap overschrijven */
 }
 
-/* Logo altijd 40 px */
+/* Logo altijd 50 px */
 .logo {
-    max-height: 40px;
-    min-height: 40px;
-    height: 40px;
+    max-height: 50px;
+    min-height: 50px;
+    height: 50px;
     background-color:#006fb8 !important; /* boostrap overschrijven */
 }
 

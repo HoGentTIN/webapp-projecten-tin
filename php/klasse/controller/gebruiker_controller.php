@@ -33,6 +33,20 @@ class GebruikerController extends Controller
     }
 
     /**
+     * Aangemelde gebruiker
+     * @return Gebruiker|null
+     */
+    public function geef_aangemelde_gebruiker() {
+        $gebruiker = $this->_gebruiker_mapper->geef_gebruiker($this->_gebruikersnaam);
+        if(isset($gebruiker)) {
+            return $gebruiker;
+        }
+        else {
+            return null;
+        }
+    }
+
+    /**
      * Meld een gebruiker aan
      * @param string $gebruikersnaam
      * @param string $wachtwoord
@@ -58,6 +72,22 @@ class GebruikerController extends Controller
     {
         // wachtwoord resetten in DB
         if(!$this->_gebruiker_mapper->wijzig_wachtwoord($this->geef_gebruikersnaam(), $oud_wachtwoord, $nieuw_wachtwoord)){
+            $this->_fout = $this->_gebruiker_mapper->geef_fout();
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Wijzigt de huidige zichtbare periode van een gebruiker
+     * @param $academiejaar
+     * @param $zittijd
+     * @return bool                 Gelukt/niet gelukt
+     */
+    public function wijzig_periode($academiejaar, $zittijd)
+    {
+        // wachtwoord resetten in DB
+        if(!$this->_gebruiker_mapper->wijzig_periode($this->geef_gebruikersnaam(), $academiejaar, $zittijd)){
             $this->_fout = $this->_gebruiker_mapper->geef_fout();
             return false;
         }
