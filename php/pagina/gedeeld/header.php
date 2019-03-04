@@ -18,7 +18,6 @@
     <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/vendor/twitter/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="<?php echo $_SERVER['SRV_ALIAS'] ?>/css/style.css" rel="stylesheet">
-    <link href="/prjtin/css/style.css" rel="stylesheet">
     <title> <?php echo $_GET['pagina_titel'] ?> </title>
 </head>
 <body>
